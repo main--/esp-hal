@@ -2667,7 +2667,7 @@ pub mod asynch {
             }
 
             // start: set I2S_RX_START
-            self.i2s.rx_start(len);
+            self.i2s.rx_start(0xFFF);
 
             let state = RxCircularState::new(&mut self.rx_chain);
             Ok(I2sReadDmaTransferAsync {
