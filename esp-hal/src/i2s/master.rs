@@ -2146,8 +2146,6 @@ mod private {
         }
 
         fn rx_start(&self, len: usize) {
-            let len = len - 1;
-
             self.regs()
                 .rxeof_num()
                 .write(|w| unsafe { w.rx_eof_num().bits(len as u16) });
